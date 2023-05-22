@@ -1,0 +1,9 @@
+//Colors
+$colorPrimary: #f8c300;
+$colorPrimaryShaded: #faa620;
+$colorIcons: #e2e2e2;
+
+:export {
+  primaryColor: $colorPrimary;
+  primaryColorShaded: colorPrimaryShaded;
+}
