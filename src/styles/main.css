@@ -45,6 +45,9 @@ h4 {
   justify-content: center;
   align-items: center;
   background-color: #303d44;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .container {
@@ -76,7 +79,7 @@ h4 {
   top: -520px;
   box-shadow: 0 -5px 40px 0 rgba(30, 30, 30, 0.2);
   overflow: hidden;
-  width: 900px;
+  width: 1100px;
   height: 900px;
   border-radius: 50%;
   transition: all 0.8s ease-in-out;
