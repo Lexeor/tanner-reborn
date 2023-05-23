@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Timer from "./components/Timer";
 import styleVariables from "./styles/_variables.scss";
 import { goltis } from "./goltis";
+import { timeFormat } from "./utils/utils";
 
 const timers = [
   {
@@ -83,22 +84,46 @@ const timers = [
 
 function App() {
   const [timersState, setTimersState] = useState(goltis);
-  const [currentTimer, setCurrentTimer] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-
+  const [isFinished, setIsFinished] = useState(false);
+  //
   const [tsOpened, setTsOpened] = useState(false);
 
-  // const timerComponents = timersState.map(({ id, time, isPlaying }) => (
-  //   <div key={id} className="timer-div">
-  //     <Timer id={id} time={time} active={isPlaying} switchTimer={switchTimer} />
-  //   </div>
-  // ));
+  const [currentTimer, setCurrentTimer] = useState(() => {
+    const saved = localStorage.getItem("currentTimer");
+    const date = localStorage.getItem("sunbathDate");
+
+    let initialValue = 0;
+    if (saved) {
+      initialValue = JSON.parse(saved);
+    }
+    return initialValue;
+  });
+
+  const timersTable = timersState.map(({ id, time }) => {
+    const timerClass = `timer-btn${currentTimer + 1 === id ? " current" : ""}`;
+    return (
+      <button
+        key={id}
+        className={timerClass}
+        onClick={() => switchTimer(id - 1)}
+      >
+        {timeFormat(time)}
+      </button>
+    );
+  });
 
   function switchTimer(id) {
-    setCurrentTimer((prev) => id);
-
-    // Start next timer
-    toggleTimer();
+    if (id < timersState.length) {
+      if (isFinished) {
+        setIsFinished(false);
+      }
+      setCurrentTimer(id);
+      // Start next timer
+      setIsPlaying(true);
+    } else {
+      setIsFinished(true);
+    }
   }
 
   function toggleTimer() {
@@ -110,47 +135,40 @@ function App() {
   }
 
   useEffect(() => {
-    toggleTimer();
+    // Put finished timer to localStorage
+    localStorage.setItem("currentTimer", JSON.stringify(currentTimer));
+    //...and date of last sunbath
+    localStorage.setItem("sunbathDate", JSON.stringify(new Date()));
   }, [currentTimer]);
 
   return (
     <div className="App">
       <div className="container">
         <header>
-          <i class="ri-moon-fill"></i>
+          <i className="ri-moon-fill"></i>
           TANNER
-          <i class="ri-settings-3-fill"></i>
+          <i className="ri-settings-3-fill"></i>
         </header>
         <div className="timer-background"></div>
         <Timer
           id={currentTimer}
           item={timersState[currentTimer]}
           active={isPlaying}
+          finished={isFinished}
           switchTimer={switchTimer}
           toggleTimer={toggleTimer}
         />
-        {/* <div className="timer">
-          <div className="timer-stage">
-            <div className="timer-sub-header">1</div>
-            <div className="timer-sub-header">ЭТАП</div>
-          </div>
-          <div className="timer-clock">15:00</div>
-          <div className="timer-sub-header">Спина</div>
-        </div> */}
         <div className={`shadow-circle${tsOpened ? " opened" : ""}`}>
           <div className="timers-panel">
             <div className="timers-headers">
               <div>Face</div>
               <div>Back</div>
-              <div>Right</div>
               <div>Left</div>
+              <div>Right</div>
               <div>Shadow</div>
             </div>
             <div className="timer-selector-wrapper">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sit
-              quisquam delectus vel porro molestiae sunt, voluptas repudiandae
-              harum pariatur. Excepturi distinctio facilis aut laboriosam
-              tenetur at possimus dicta. Minus!
+              <div className="timers-table">{timersTable}</div>
             </div>
           </div>
           <i

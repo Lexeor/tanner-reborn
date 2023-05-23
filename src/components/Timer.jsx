@@ -2,24 +2,17 @@ import React, { useState } from "react";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import useSound from "use-sound";
 import styleVariables from "../styles/_variables.scss";
+import { timeFormat } from "../utils/utils";
 
 import dingSfx from "../sounds/Ding.mp3";
 
 function Timer(props) {
-  const [finished, setFinished] = useState(false);
   const [playNotification] = useSound(dingSfx);
-
-  function timeFormat(time) {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-
-    return `${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
-  }
 
   const renderSide = (id) => {
     switch (id % 5) {
       case 0:
-        return "Front";
+        return "Face";
       case 1:
         return "Back";
       case 2:
@@ -38,7 +31,7 @@ function Timer(props) {
   };
 
   const renderTime = ({ remainingTime }) => {
-    if (finished) {
+    if (props.finished) {
       return (
         <svg
           className="checkmark"
@@ -57,7 +50,7 @@ function Timer(props) {
     }
 
     return (
-      <div className="timer-body">
+      <div className={`timer-body${!props.active ? " inactive" : ""}`}>
         <h3>{renderStage(props.id)} stage</h3>
         <h1 className="timer-clock">{timeFormat(remainingTime)}</h1>
         <h3>{renderSide(props.id)}</h3>
@@ -69,10 +62,10 @@ function Timer(props) {
     <div className="timer-wrapper" onClick={() => props.toggleTimer(props.id)}>
       <CountdownCircleTimer
         key={props.id}
-        isPlaying={props.active}
+        isPlaying={!props.finished ? props.active : false}
         size={200}
         strokeWidth={10}
-        trailColor={finished ? "green" : "#d9d9d9"}
+        trailColor={props.finished ? "green" : "#d9d9d9"}
         duration={props.item.time}
         colors={[styleVariables.primaryColor, styleVariables.primaryColor]}
         colorsTime={[props.item.time, 0]}
