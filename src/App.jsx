@@ -3,6 +3,7 @@ import Timer from "./components/Timer";
 import styleVariables from "./styles/_variables.scss";
 import { goltis } from "./goltis";
 import { timeFormat } from "./utils/utils";
+import WeatherStat from "./components/WeatherStat";
 
 const timers = [
   {
@@ -177,6 +178,12 @@ function App() {
             }`}
             onClick={openTimerSettings}
           ></i>
+        </div>
+        <div className="weather-stats-container">
+          <WeatherStat name="Temperature" icon="ri-temp-hot-line" value="26°" />
+          <WeatherStat name="Wind" icon="ri-windy-line" value="NNW" />
+          <WeatherStat name="UV Index" icon="ri-cloud-line" value="2.8" />
+          <WeatherStat name="Burn Risk" icon="ri-fire-line" value="Low" />
         </div>
       </div>
     </div>
