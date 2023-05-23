@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
-import Timer from "./components/Timer";
-import styleVariables from "./styles/_variables.scss";
-import { goltis } from "./goltis";
 import { timeFormat } from "./utils/utils";
+import { ThemeContext } from "./contexts/ThemeContext";
+import Timer from "./components/Timer";
 import WeatherStat from "./components/WeatherStat";
 import ThemeSwitch from "./components/ThemeSwitch";
-import { ThemeContext } from "./contexts/ThemeContext";
+// Goltis data
+import { goltis } from "./goltis";
 
 const timers = [
   {
@@ -155,7 +155,9 @@ function App() {
         <header>
           <ThemeSwitch />
           TANNER
-          <i className="ri-settings-3-fill"></i>
+          <div className="settings-icon">
+            <i className="ri-settings-3-fill"></i>
+          </div>
         </header>
         <div className="timer-background"></div>
         <Timer
