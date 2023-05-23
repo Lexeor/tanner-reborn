@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Timer from "./components/Timer";
 import styleVariables from "./styles/_variables.scss";
 import { goltis } from "./goltis";
 import { timeFormat } from "./utils/utils";
 import WeatherStat from "./components/WeatherStat";
+import ThemeSwitch from "./components/ThemeSwitch";
+import { ThemeContext } from "./contexts/ThemeContext";
 
 const timers = [
   {
@@ -90,6 +92,8 @@ function App() {
   //
   const [tsOpened, setTsOpened] = useState(false);
 
+  const context = useContext(ThemeContext);
+
   const [currentTimer, setCurrentTimer] = useState(() => {
     const saved = localStorage.getItem("currentTimer");
     const date = localStorage.getItem("sunbathDate");
@@ -142,11 +146,14 @@ function App() {
     localStorage.setItem("sunbathDate", JSON.stringify(new Date()));
   }, [currentTimer]);
 
+  // Genereta theme class
+  const AppClass = `App theme-${context.theme}`;
+
   return (
-    <div className="App">
+    <div className={AppClass}>
       <div className="container">
         <header>
-          <i className="ri-moon-fill"></i>
+          <ThemeSwitch />
           TANNER
           <i className="ri-settings-3-fill"></i>
         </header>

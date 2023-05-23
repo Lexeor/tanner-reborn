@@ -1,0 +1,20 @@
+$themes: (
+  light: (
+    color-background: #fafafa,
+    color-background-darker: #ececec,
+    color-text: black,
+    color-text-contrast: whitesmoke,
+    color-header: #a6a6a6,
+    color-primary: #f8c300,
+    color-primary-shaded: #faa620,
+  ),
+  dark: (
+    color-background: #37474f,
+    color-background-darker: #303d44,
+    color-text: whitesmoke,
+    color-text-contrast: black,
+    color-header: #a6a6a6,
+    color-primary: #f8c300,
+    color-primary-shaded: #faa620,
+  ),
+);

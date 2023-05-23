@@ -4,8 +4,10 @@ $colorPrimaryShaded: #faa620;
 $colorPaused: #f8c20059;
 $colorPausedShaded: #faa62059;
 $colorIcons: #e2e2e2;
+$colorBackground: #fff;
+$colorBackgroundShaded: #f7f7f7;
 
 :export {
-  primaryColor: $colorPrimary;
-  primaryColorShaded: colorPrimaryShaded;
+  primaryColor: #f8c300;
+  primaryColorShaded: #faa620;
 }
