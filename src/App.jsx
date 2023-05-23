@@ -177,12 +177,7 @@ function App() {
             }`}
             onClick={openTimerSettings}
           ></i>
-          {/* <div
-            className={`chevron${tsOpened ? " opened" : ""}`}
-            onClick={openTimerSettings}
-          ></div> */}
         </div>
-        {/* <div className="timers">{timerComponents}</div> */}
       </div>
     </div>
   );
