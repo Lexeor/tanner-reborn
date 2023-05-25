@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import useSound from "use-sound";
+// eslint-disable-next-line
 import styleVariables from "../styles/_variables.scss";
 import { timeFormat } from "../utils/utils";
 

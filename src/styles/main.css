@@ -372,7 +372,7 @@ header i:hover {
   margin-top: 120px;
   gap: 1em;
   row-gap: 2em;
-  padding: 0 1em;
+  padding: 0 2em;
   z-index: 0;
 }
 .weather-stats-container .weather-stat {

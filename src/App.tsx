@@ -10,8 +10,8 @@ import { debugData } from "./data/debug";
 
 function App() {
   //Debug mode
-  const debug = true;
-  const timersState = debug ? goltisData : debugData;
+  const debug = false;
+  const timersState = !debug ? goltisData : debugData;
 
   // App States
   const [isPlaying, setIsPlaying] = useState(false);
