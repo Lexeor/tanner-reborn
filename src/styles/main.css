@@ -1,6 +1,8 @@
 :export {
-  primaryColor: #f8c300;
-  primaryColorShaded: #faa620;
+  primary: #f8c300;
+  primaryDark: #faa620;
+  trail: #f8c300;
+  trailDark: #faa620;
 }
 
 /**

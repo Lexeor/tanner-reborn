@@ -7,7 +7,15 @@ $colorIcons: #e2e2e2;
 $colorBackground: #fff;
 $colorBackgroundShaded: #f7f7f7;
 
+$colors: (
+  "primary": $colorPrimary,
+  "primaryDark": $colorPrimaryShaded,
+  "trail": $colorPrimary,
+  "trailDark": $colorPrimaryShaded,
+);
+
 :export {
-  primaryColor: #f8c300;
-  primaryColorShaded: #faa620;
+  @each $name, $value in $colors {
+    #{unquote($name)}: $value;
+  }
 }

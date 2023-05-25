@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import useSound from "use-sound";
 import styleVariables from "../styles/_variables.scss";
@@ -6,10 +7,32 @@ import { timeFormat } from "../utils/utils";
 
 import dingSfx from "../sounds/Ding.mp3";
 
-function Timer(props) {
-  const [playNotification] = useSound(dingSfx);
+type TimerItemType = {
+  id: number;
+  time: number;
+  isPlaying?: boolean;
+};
 
-  const renderSide = (id) => {
+type TimerProps = {
+  id: number;
+  item: TimerItemType;
+  active: boolean;
+  finished: boolean;
+  switchTimer: (id: number) => void;
+  toggleTimer: () => void;
+};
+
+type TimeProps = {
+  remainingTime: number;
+  elapsedTime: number;
+  color: string;
+};
+
+function Timer(props: TimerProps) {
+  const [playNotification] = useSound(dingSfx);
+  const context = useContext(ThemeContext);
+
+  const renderSide = (id: number) => {
     switch (id % 5) {
       case 0:
         return "Face";
@@ -26,11 +49,11 @@ function Timer(props) {
     }
   };
 
-  const renderStage = (id) => {
+  const renderStage = (id: number) => {
     return Math.floor(id / 5) + 1;
   };
 
-  const renderTime = ({ remainingTime }) => {
+  const renderTime = (time: TimeProps) => {
     if (props.finished) {
       return (
         <svg
@@ -52,26 +75,33 @@ function Timer(props) {
     return (
       <div className={`timer-body${!props.active ? " inactive" : ""}`}>
         <h3>{renderStage(props.id)} stage</h3>
-        <h1 className="timer-clock">{timeFormat(remainingTime)}</h1>
+        <h1 className="timer-clock">{timeFormat(time.remainingTime)}</h1>
         <h3>{renderSide(props.id)}</h3>
       </div>
     );
   };
 
   return (
-    <div className="timer-wrapper" onClick={() => props.toggleTimer(props.id)}>
+    <div className="timer-wrapper" onClick={() => props.toggleTimer()}>
       <CountdownCircleTimer
         key={props.id}
         isPlaying={!props.finished ? props.active : false}
         size={200}
         strokeWidth={10}
-        trailColor={props.finished ? "green" : "#d9d9d9"}
+        trailColor={
+          // TODO Implement sass variables
+          props.finished
+            ? "#00ff00"
+            : context?.theme === "light"
+            ? "#d9d9d9"
+            : "#303d44"
+        }
         duration={props.item.time}
-        colors={[styleVariables.primaryColor, styleVariables.primaryColor]}
+        // TODO Implement sass variables
+        colors={["#f8c300", "#f8c300"]}
         colorsTime={[props.item.time, 0]}
         onComplete={() => {
           playNotification();
-          // setFinished((prevState) => !prevState);
           props.switchTimer(props.id + 1);
           return { shouldRepeat: true, delay: 0 };
         }}

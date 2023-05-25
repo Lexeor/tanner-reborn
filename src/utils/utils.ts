@@ -1,4 +1,4 @@
-export function timeFormat(time) {
+export function timeFormat(time: number) {
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
