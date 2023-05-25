@@ -5,99 +5,26 @@ import Timer from "./components/Timer";
 import WeatherStat from "./components/WeatherStat";
 import ThemeSwitch from "./components/ThemeSwitch";
 // Goltis data
-import { goltis } from "./goltis";
-
-const timers = [
-  {
-    id: 1,
-    time: 2,
-    isPlaying: false,
-  },
-  {
-    id: 2,
-    time: 4,
-    isPlaying: false,
-  },
-  {
-    id: 3,
-    time: 4,
-    isPlaying: false,
-  },
-  {
-    id: 4,
-    time: 3,
-    isPlaying: false,
-  },
-  {
-    id: 5,
-    time: 10,
-    isPlaying: false,
-  },
-  {
-    id: 6,
-    time: 2,
-    isPlaying: false,
-  },
-  {
-    id: 7,
-    time: 4,
-    isPlaying: false,
-  },
-  {
-    id: 8,
-    time: 4,
-    isPlaying: false,
-  },
-  {
-    id: 9,
-    time: 3,
-    isPlaying: false,
-  },
-  {
-    id: 10,
-    time: 10,
-    isPlaying: false,
-  },
-  {
-    id: 11,
-    time: 2,
-    isPlaying: false,
-  },
-  {
-    id: 12,
-    time: 4,
-    isPlaying: false,
-  },
-  {
-    id: 13,
-    time: 4,
-    isPlaying: false,
-  },
-  {
-    id: 14,
-    time: 3,
-    isPlaying: false,
-  },
-  {
-    id: 15,
-    time: 10,
-    isPlaying: false,
-  },
-];
+import { goltisData } from "./data/goltis";
+import { debugData } from "./data/debug";
 
 function App() {
-  const [timersState, setTimersState] = useState(goltis);
+  //Debug mode
+  const debug = true;
+  const timersState = debug ? goltisData : debugData;
+
+  // App States
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
-  //
-  const [tsOpened, setTsOpened] = useState(false);
 
+  const [tsOpened, setTsOpened] = useState(false);
+  // ThemeContext
   const context = useContext(ThemeContext);
 
   const [currentTimer, setCurrentTimer] = useState(() => {
     const saved = localStorage.getItem("currentTimer");
-    const date = localStorage.getItem("sunbathDate");
 
+    // If currentTimer is not set in localStorage - set 0
     let initialValue = 0;
     if (saved) {
       initialValue = JSON.parse(saved);
@@ -105,6 +32,7 @@ function App() {
     return initialValue;
   });
 
+  // Table with timer selection
   const timersTable = timersState.map(({ id, time }) => {
     const timerClass = `timer-btn${currentTimer + 1 === id ? " current" : ""}`;
     return (
@@ -118,7 +46,7 @@ function App() {
     );
   });
 
-  function switchTimer(id) {
+  function switchTimer(id: number) {
     if (id < timersState.length) {
       if (isFinished) {
         setIsFinished(false);
@@ -147,7 +75,7 @@ function App() {
   }, [currentTimer]);
 
   // Genereta theme class
-  const AppClass = `App theme-${context.theme}`;
+  const AppClass = `App theme-${context?.theme}`;
 
   return (
     <div className={AppClass}>

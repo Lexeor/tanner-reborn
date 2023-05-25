@@ -201,6 +201,12 @@ header {
 
 .timer-wrapper {
   z-index: 4;
+
+  svg {
+    path:first-child {
+      transition: $transition;
+    }
+  }
 }
 
 .i-chevron {
