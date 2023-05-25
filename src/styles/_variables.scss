@@ -7,6 +7,9 @@ $colorIcons: #e2e2e2;
 $colorBackground: #fff;
 $colorBackgroundShaded: #f7f7f7;
 
+// Transition
+$transition: all 0.5s ease-in-out;
+
 $colors: (
   "primary": $colorPrimary,
   "primaryDark": $colorPrimaryShaded,

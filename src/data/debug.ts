@@ -1,4 +1,4 @@
-export const timers = [
+export const debugData = [
   {
     id: 1,
     time: 2,

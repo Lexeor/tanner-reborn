@@ -211,6 +211,11 @@ header i:hover {
   width: 38px;
   height: 38px;
 }
+.settings-icon i {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .timers-panel {
   display: flex;
@@ -285,6 +290,9 @@ header i:hover {
 
 .timer-wrapper {
   z-index: 4;
+}
+.timer-wrapper svg path:first-child {
+  transition: all 0.5s ease-in-out;
 }
 
 .i-chevron {
