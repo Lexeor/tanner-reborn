@@ -17,7 +17,12 @@ function ThemeContextProvider({ children }: ThemeContextProviderProps) {
   const [theme, setTheme] = useState<Theme>("light");
 
   function toggleTheme() {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => {
+      const newTheme = prev === "light" ? "dark" : "light";
+
+      localStorage.setItem("savedTheme", newTheme);
+      return newTheme;
+    });
   }
 
   return (
