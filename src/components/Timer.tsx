@@ -95,7 +95,7 @@ function Timer(props: TimerProps) {
             ? "#00ff00"
             : context?.theme === "light"
             ? "#d9d9d9"
-            : "#303d44"
+            : "#202329"
         }
         duration={props.item.time}
         // TODO Implement sass variables

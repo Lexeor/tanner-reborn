@@ -1,0 +1,81 @@
+.timer-body {
+  @include theme-aware("background", "color-background");
+  @include theme-aware("color", "color-primary");
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 5;
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 1em;
+
+    &:first-child {
+      margin-top: 1em;
+    }
+
+    &:last-child {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.timer-body.inactive {
+  background: radial-gradient($colorPrimary, $colorPrimaryShaded);
+  @include theme-aware("color", "color-background-darker");
+}
+
+.timer-clock {
+  font-size: 3em;
+}
+
+.timer-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 330px;
+  @include theme-aware("background-color", "color-background");
+  z-index: 3;
+}
+
+.timer-wrapper {
+  position: relative;
+  z-index: 4;
+
+  div {
+    z-index: 5;
+
+    svg {
+      position: relative;
+      z-index: 6;
+      filter: drop-shadow(0 0px 3px rgba($colorBlack, 0.1));
+
+      path:first-child {
+        transition: $transition;
+        z-index: 7;
+      }
+
+      path:last-child {
+        z-index: 8;
+      }
+    }
+  }
+}
+
+.checkmark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: green;
+  stroke-miterlimit: 10;
+  stroke-dashoffset: 0;
+  margin: auto;
+}

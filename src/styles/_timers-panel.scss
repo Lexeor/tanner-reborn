@@ -1,0 +1,95 @@
+.timers-panel {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  flex-direction: column;
+  width: 390px;
+  transition: all 0.8s ease-in-out;
+  padding-bottom: 30px;
+  z-index: 1;
+}
+
+.timer-selector-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 1em;
+}
+
+.timers-headers {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1em;
+}
+
+.timers-headers > div {
+  text-transform: uppercase;
+  @include theme-aware("color", "color-header");
+  font-size: 0.8em;
+  font-weight: 500;
+  width: 18%;
+}
+
+.timers-table {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.timer-btn {
+  @include theme-aware("color", "color-primary");
+  border: 1px solid $colorPrimary;
+  @include theme-aware("background-color", "color-background");
+  width: 18%;
+  border-radius: 5px;
+  padding: 0.5em 0;
+  font-size: 1.1em;
+}
+
+.timer-btn.current {
+  @include theme-aware("color", "color-text-contrast");
+  @include theme-aware("background-color", "color-primary");
+}
+
+// Panel styling
+
+.shadow-circle {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: -520px;
+  @include theme-aware("box-shadow", "box-shadow");
+  @include theme-aware("background-color", "color-background");
+  overflow: hidden;
+  width: 1100px;
+  height: 900px;
+  border-radius: 50%;
+  transition: all 0.8s ease-in-out;
+  z-index: 2;
+}
+
+.shadow-circle.opened {
+  top: -250px;
+}
+
+.i-chevron {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  font-size: 3em;
+  margin: 0 auto;
+  @include theme-aware("color", "color-text");
+  transition: all 0.8s ease-in-out;
+}
+
+.i-chevron.opened {
+  transform: scaleY(-1);
+}
