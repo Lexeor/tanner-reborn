@@ -12,7 +12,10 @@ function SettingsMenu({ isHidden }: Props) {
   return (
     <div className={panelClass}>
       <h2>Tanning Style</h2>
-      <SlidingSelector options={["Normal", "Fast", "Extreme"]} />
+      <SlidingSelector
+        options={["Normal", "Fast", "Extreme"]}
+        localStorageValue={"tanningStyle"}
+      />
     </div>
   );
 }

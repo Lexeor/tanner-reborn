@@ -25,8 +25,20 @@ function App() {
   // ThemeContext
   const context = useContext(ThemeContext);
 
+  // Current states
   const [currentTimer, setCurrentTimer] = useState(() => {
     const saved = localStorage.getItem("currentTimer");
+
+    // If currentTimer is not set in localStorage - set 0
+    let initialValue = 0;
+    if (saved) {
+      initialValue = JSON.parse(saved);
+    }
+    return initialValue;
+  });
+
+  const [currentStyle, setCurrentStyle] = useState(() => {
+    const saved = localStorage.getItem("tanningStyle");
 
     // If currentTimer is not set in localStorage - set 0
     let initialValue = 0;
@@ -78,10 +90,15 @@ function App() {
     localStorage.setItem("sunbathDate", JSON.stringify(new Date()));
   }, [currentTimer]);
 
-  // Genereta theme class
+  useEffect(() => {
+    // Put selected tanning style to localStorage
+    localStorage.setItem("tanningStyle", JSON.stringify(currentStyle));
+  }, [currentStyle]);
+
+  // Generate theme class
   const AppClass = `App theme-${context?.theme}`;
 
-  // Settings menu
+  // Settings menu toggler
   const toggleMenu = () => {
     setIsMenuVisible((prev) => !prev);
   };

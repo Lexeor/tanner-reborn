@@ -2,12 +2,13 @@ import React, { useState } from "react";
 
 type Props = {
   options: string[];
+  localStorageValue: string;
 };
 
-function SlidingSelector({ options }: Props) {
+function SlidingSelector({ options, localStorageValue }: Props) {
   // If tanningStyle is not set in localStorage - set 0
   const [activeOption, setActiveOption] = useState(() => {
-    const saved = localStorage.getItem("tanningStyle");
+    const saved = localStorage.getItem(localStorageValue);
 
     // If currentTimer is not set in localStorage - set 0
     let initialValue = 0;
@@ -19,7 +20,7 @@ function SlidingSelector({ options }: Props) {
 
   function handleOptionClick(index: number) {
     setActiveOption(() => {
-      localStorage.setItem("tanningStyle", JSON.stringify(index));
+      localStorage.setItem(localStorageValue, JSON.stringify(index));
 
       return index;
     });
