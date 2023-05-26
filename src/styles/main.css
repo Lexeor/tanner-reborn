@@ -82,7 +82,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 5;
+  z-index: 11;
 }
 .theme-light header {
   transition: all 0.5s ease-in-out;
@@ -360,6 +360,39 @@ header i:hover {
   stroke-miterlimit: 10;
   stroke-dashoffset: 0;
   margin: auto;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 300px;
+  min-height: 100%;
+  padding: 2em;
+}
+.theme-light .settings-menu {
+  transition: all 0.5s ease-in-out;
+  background-color: #ececec;
+}
+.theme-dark .settings-menu {
+  transition: all 0.5s ease-in-out;
+  background-color: #202329;
+}
+.theme-light .settings-menu {
+  transition: all 0.5s ease-in-out;
+  color: black;
+}
+.theme-dark .settings-menu {
+  transition: all 0.5s ease-in-out;
+  color: whitesmoke;
+}
+
+.hidden {
+  display: none;
 }
 
 .weather-stats-container {

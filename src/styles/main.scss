@@ -62,7 +62,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 5;
+  z-index: 11;
 
   i {
     font-size: 0.8em;
@@ -76,6 +76,7 @@ header {
 @import "./timers-panel";
 @import "./theme-switch";
 @import "./timer";
+@import "./settings-menu";
 
 // Weather stats
 .weather-stats-container {

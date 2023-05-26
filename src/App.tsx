@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useContext } from "react";
 import { timeFormat } from "./utils/utils";
+//Contexts
 import { ThemeContext } from "./contexts/ThemeContext";
+//Components
 import Timer from "./components/Timer";
 import WeatherStat from "./components/WeatherStat";
 import ThemeSwitch from "./components/ThemeSwitch";
+import SettingsMenu from "./components/SettingsMenu";
 // Goltis data
 import { goltisData } from "./data/goltis";
 import { debugData } from "./data/debug";
@@ -16,6 +19,7 @@ function App() {
   // App States
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const [tsOpened, setTsOpened] = useState(false);
   // ThemeContext
@@ -77,13 +81,19 @@ function App() {
   // Genereta theme class
   const AppClass = `App theme-${context?.theme}`;
 
+  // Settings menu
+  const toggleMenu = () => {
+    setIsMenuVisible((prev) => !prev);
+  };
+
   return (
     <div className={AppClass}>
       <div className="container">
+        <SettingsMenu isHidden={isMenuVisible} toggleMenu={toggleMenu} />
         <header>
           <ThemeSwitch />
           TANNER
-          <div className="settings-icon">
+          <div className="settings-icon" onClick={toggleMenu}>
             <i className="ri-settings-3-fill"></i>
           </div>
         </header>
