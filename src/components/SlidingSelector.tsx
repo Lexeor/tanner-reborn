@@ -5,10 +5,24 @@ type Props = {
 };
 
 function SlidingSelector({ options }: Props) {
-  const [activeOption, setActiveOption] = useState(0);
+  // If tanningStyle is not set in localStorage - set 0
+  const [activeOption, setActiveOption] = useState(() => {
+    const saved = localStorage.getItem("tanningStyle");
+
+    // If currentTimer is not set in localStorage - set 0
+    let initialValue = 0;
+    if (saved) {
+      initialValue = JSON.parse(saved);
+    }
+    return initialValue;
+  });
 
   function handleOptionClick(index: number) {
-    setActiveOption(index);
+    setActiveOption(() => {
+      localStorage.setItem("tanningStyle", JSON.stringify(index));
+
+      return index;
+    });
   }
 
   // Render selector options
@@ -28,6 +42,7 @@ function SlidingSelector({ options }: Props) {
     );
   });
 
+  // Selector class generation for 3-position slider functionaloty
   const selectorPosition = ["left", "center", "right"];
   const selectorClass = `slider ${selectorPosition[activeOption] as string}`;
 

@@ -89,10 +89,10 @@ function App() {
   return (
     <div className={AppClass}>
       <div className="container">
-        <SettingsMenu isHidden={isMenuVisible} toggleMenu={toggleMenu} />
+        <SettingsMenu isHidden={!isMenuVisible} toggleMenu={toggleMenu} />
         <header>
           <ThemeSwitch />
-          TANNER
+          {isMenuVisible ? "SETTINGS" : "TANNER"}
           <div className="settings-icon" onClick={toggleMenu}>
             <i className="ri-settings-3-fill"></i>
           </div>
