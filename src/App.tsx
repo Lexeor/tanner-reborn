@@ -3,6 +3,7 @@ import { timeFormat } from "./utils/utils";
 //Contexts
 import { ThemeContext } from "./contexts/ThemeContext";
 //Components
+import useLocalStorage from "./hooks/useLocalStorage";
 import Timer from "./components/Timer";
 import WeatherStat from "./components/WeatherStat";
 import ThemeSwitch from "./components/ThemeSwitch";
@@ -26,31 +27,15 @@ function App() {
   const context = useContext(ThemeContext);
 
   // Current states
-  const [currentTimer, setCurrentTimer] = useState(() => {
-    const saved = localStorage.getItem("currentTimer");
+  const [currentTimer, setCurrentTimer] = useLocalStorage("currentTimer", 0);
 
-    // If currentTimer is not set in localStorage - set 0
-    let initialValue = 0;
-    if (saved) {
-      initialValue = JSON.parse(saved);
-    }
-    return initialValue;
-  });
-
-  const [currentStyle, setCurrentStyle] = useState(() => {
-    const saved = localStorage.getItem("tanningStyle");
-
-    // If currentTimer is not set in localStorage - set 0
-    let initialValue = 0;
-    if (saved) {
-      initialValue = JSON.parse(saved);
-    }
-    return initialValue;
-  });
+  const [currentStyle, setCurrentStyle] = useLocalStorage("tanningStyle", 0);
 
   // Table with timer selection
   const timersTable = timersState.map(({ id, time }) => {
-    const timerClass = `timer-btn${currentTimer + 1 === id ? " current" : ""}`;
+    const timerClass = `timer-btn${
+      currentTimer ? (currentTimer + 1 === id ? " current" : "") : ""
+    }`;
     return (
       <button
         key={id}
@@ -116,8 +101,8 @@ function App() {
         </header>
         <div className="timer-background"></div>
         <Timer
-          id={currentTimer}
-          item={timersState[currentTimer]}
+          id={currentTimer ? currentTimer : 0}
+          item={currentTimer ? timersState[currentTimer] : timersState[0]}
           active={isPlaying}
           finished={isFinished}
           switchTimer={switchTimer}
