@@ -12,7 +12,18 @@ import SettingsMenu from "./components/SettingsMenu";
 import { goltisData } from "./data/goltis";
 import { debugData } from "./data/debug";
 
+import { WeatherData } from "./types/types";
+import { request } from "./utils/fetch";
+
 function App() {
+  // TEST
+  useEffect(() => {
+    request<WeatherData>("http://51.250.94.131:5000/").then((data) => {
+      // Now, however, a `user` variable has the `User` type.
+      console.log(data);
+    });
+  }, []);
+
   //Debug mode
   const debug = false;
   const timersState = !debug ? goltisData : debugData;
