@@ -99,7 +99,7 @@ function App() {
 
   // Weather initial fetch
   useEffect(() => {
-    request<WeatherData>("http://51.250.94.131:5000/").then((data) => {
+    request<WeatherData>("http://51.250.94.131:8000/").then((data) => {
       setWeather(data);
     });
   }, []);
