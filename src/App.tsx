@@ -16,13 +16,7 @@ import { WeatherData } from "./types/types";
 import { request } from "./utils/fetch";
 
 function App() {
-  // TEST
-  useEffect(() => {
-    request<WeatherData>("http://51.250.94.131:5000/").then((data) => {
-      // Now, however, a `user` variable has the `User` type.
-      console.log(data);
-    });
-  }, []);
+  const [weather, setWeather] = useState<WeatherData>();
 
   //Debug mode
   const debug = false;
@@ -98,6 +92,18 @@ function App() {
     setIsMenuVisible((prev) => !prev);
   };
 
+  // Weather variables
+  const temp = `${weather?.main.feels_like ? weather?.main.feels_like : "--"}°`;
+  const uv = `${weather?.main.uv_index ? weather?.main.uv_index : "--"}`;
+  const wind = `${weather?.wind?.speed ? weather?.wind?.speed : "--"} m/s`;
+
+  // Weather initial fetch
+  useEffect(() => {
+    request<WeatherData>("http://51.250.94.131:5000/").then((data) => {
+      setWeather(data);
+    });
+  }, []);
+
   return (
     <div className={AppClass}>
       <div className="container">
@@ -139,9 +145,13 @@ function App() {
           ></i>
         </div>
         <div className="weather-stats-container">
-          <WeatherStat name="Temperature" icon="ri-temp-hot-line" value="26°" />
-          <WeatherStat name="Wind" icon="ri-windy-line" value="NNW" />
-          <WeatherStat name="UV Index" icon="ri-cloud-line" value="2.8" />
+          <WeatherStat
+            name="Temperature"
+            icon="ri-temp-hot-line"
+            value={temp}
+          />
+          <WeatherStat name="Wind" icon="ri-windy-line" value={wind} />
+          <WeatherStat name="UV Index" icon="ri-cloud-line" value={uv} />
           <WeatherStat name="Burn Risk" icon="ri-fire-line" value="Low" />
         </div>
       </div>
