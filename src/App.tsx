@@ -39,7 +39,6 @@ function App() {
 
   // Current states
   const [currentTimer, setCurrentTimer] = useLocalStorage("currentTimer", 0);
-
   const [currentStyle, setCurrentStyle] = useLocalStorage("tanningStyle", 0);
 
   // Table with timer selection
