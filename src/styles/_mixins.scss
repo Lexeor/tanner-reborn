@@ -10,7 +10,6 @@
 @mixin theme-aware($key, $color) {
   @each $theme-name, $theme-color in $themes {
     .theme-#{$theme-name} & {
-      transition: all 0.5s ease-in-out;
       #{$key}: map-get(map-get($themes, $theme-name), $color);
     }
   }
