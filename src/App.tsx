@@ -161,7 +161,12 @@ function App() {
             value={temp}
           />
           <WeatherStat name="Wind" icon="ri-windy-line" value={wind} />
-          <WeatherStat name="UV Index" icon="ri-cloud-line" value={uv} />
+          <WeatherStat
+            name="UV Index"
+            type="uv"
+            icon="ri-cloud-line"
+            value={uv}
+          />
           <WeatherStat name="Burn Risk" icon="ri-fire-line" value="Low" />
         </div>
       </div>

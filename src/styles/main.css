@@ -68,11 +68,9 @@ h2 {
   overflow: hidden;
 }
 .theme-light .container {
-  transition: all 0.5s ease-in-out;
   background-color: #ececec;
 }
 .theme-dark .container {
-  transition: all 0.5s ease-in-out;
   background-color: #202329;
 }
 
@@ -89,11 +87,9 @@ header {
   z-index: 11;
 }
 .theme-light header {
-  transition: all 0.5s ease-in-out;
   color: black;
 }
 .theme-dark header {
-  transition: all 0.5s ease-in-out;
   color: whitesmoke;
 }
 header i {
@@ -138,11 +134,9 @@ header i:hover {
   width: 18%;
 }
 .theme-light .timers-headers > div {
-  transition: all 0.5s ease-in-out;
   color: #a6a6a6;
 }
 .theme-dark .timers-headers > div {
-  transition: all 0.5s ease-in-out;
   color: #a6a6a6;
 }
 
@@ -162,36 +156,28 @@ header i:hover {
   font-size: 1.1em;
 }
 .theme-light .timer-btn {
-  transition: all 0.5s ease-in-out;
   color: #f8c300;
 }
 .theme-dark .timer-btn {
-  transition: all 0.5s ease-in-out;
   color: #f8c300;
 }
 .theme-light .timer-btn {
-  transition: all 0.5s ease-in-out;
   background-color: #fafafa;
 }
 .theme-dark .timer-btn {
-  transition: all 0.5s ease-in-out;
   background-color: #2b3138;
 }
 
 .theme-light .timer-btn.current {
-  transition: all 0.5s ease-in-out;
   color: whitesmoke;
 }
 .theme-dark .timer-btn.current {
-  transition: all 0.5s ease-in-out;
   color: black;
 }
 .theme-light .timer-btn.current {
-  transition: all 0.5s ease-in-out;
   background-color: #f8c300;
 }
 .theme-dark .timer-btn.current {
-  transition: all 0.5s ease-in-out;
   background-color: #f8c300;
 }
 
@@ -210,19 +196,15 @@ header i:hover {
   z-index: 2;
 }
 .theme-light .shadow-circle {
-  transition: all 0.5s ease-in-out;
   box-shadow: 0 -5px 40px 0 rgba(30, 30, 30, 0.2);
 }
 .theme-dark .shadow-circle {
-  transition: all 0.5s ease-in-out;
   box-shadow: 0 -5px 40px 0 rgba(30, 30, 30, 0.4);
 }
 .theme-light .shadow-circle {
-  transition: all 0.5s ease-in-out;
   background-color: #fafafa;
 }
 .theme-dark .shadow-circle {
-  transition: all 0.5s ease-in-out;
   background-color: #2b3138;
 }
 
@@ -239,11 +221,9 @@ header i:hover {
   transition: all 0.8s ease-in-out;
 }
 .theme-light .i-chevron {
-  transition: all 0.5s ease-in-out;
   color: black;
 }
 .theme-dark .i-chevron {
-  transition: all 0.5s ease-in-out;
   color: whitesmoke;
 }
 
@@ -275,19 +255,15 @@ header i:hover {
   z-index: 5;
 }
 .theme-light .timer-body {
-  transition: all 0.5s ease-in-out;
   background: #fafafa;
 }
 .theme-dark .timer-body {
-  transition: all 0.5s ease-in-out;
   background: #2b3138;
 }
 .theme-light .timer-body {
-  transition: all 0.5s ease-in-out;
   color: #f8c300;
 }
 .theme-dark .timer-body {
-  transition: all 0.5s ease-in-out;
   color: #f8c300;
 }
 .timer-body h3 {
@@ -305,11 +281,9 @@ header i:hover {
   background: radial-gradient(#f8c300, #faa620);
 }
 .theme-light .timer-body.inactive {
-  transition: all 0.5s ease-in-out;
   color: #ececec;
 }
 .theme-dark .timer-body.inactive {
-  transition: all 0.5s ease-in-out;
   color: #202329;
 }
 
@@ -326,11 +300,9 @@ header i:hover {
   z-index: 3;
 }
 .theme-light .timer-background {
-  transition: all 0.5s ease-in-out;
   background-color: #fafafa;
 }
 .theme-dark .timer-background {
-  transition: all 0.5s ease-in-out;
   background-color: #2b3138;
 }
 
@@ -380,19 +352,15 @@ header i:hover {
   padding: 2em;
 }
 .theme-light .settings-menu {
-  transition: all 0.5s ease-in-out;
   background-color: #ececec;
 }
 .theme-dark .settings-menu {
-  transition: all 0.5s ease-in-out;
   background-color: #202329;
 }
 .theme-light .settings-menu {
-  transition: all 0.5s ease-in-out;
   color: black;
 }
 .theme-dark .settings-menu {
-  transition: all 0.5s ease-in-out;
   color: whitesmoke;
 }
 
@@ -412,14 +380,13 @@ header i:hover {
   width: 100%;
   height: 48px;
   border-radius: 24px;
+  margin-bottom: 1em;
   transition: grid 1s ease-in-out;
 }
 .theme-light .slider {
-  transition: all 0.5s ease-in-out;
   background-color: #fafafa;
 }
 .theme-dark .slider {
-  transition: all 0.5s ease-in-out;
   background-color: #2b3138;
 }
 
@@ -436,11 +403,9 @@ header i:hover {
   transition: grid 1s ease-in-out;
 }
 .theme-light .selector {
-  transition: all 0.5s ease-in-out;
   background-color: #f8c300;
 }
 .theme-dark .selector {
-  transition: all 0.5s ease-in-out;
   background-color: #f8c300;
 }
 
@@ -480,12 +445,65 @@ header i:hover {
   transition: color 0.1s ease-in-out;
 }
 .theme-light .slider-option.active {
-  transition: all 0.5s ease-in-out;
   color: whitesmoke;
 }
 .theme-dark .slider-option.active {
-  transition: all 0.5s ease-in-out;
   color: black;
+}
+
+.dropdown-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  margin-bottom: 1em;
+}
+.theme-light .dropdown-wrapper {
+  background-color: #fafafa;
+}
+.theme-dark .dropdown-wrapper {
+  background-color: #2b3138;
+}
+
+.dropdown-value {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 100%;
+  height: 48px;
+  border-radius: 24px;
+}
+.theme-light .dropdown-value {
+  background-color: #fafafa;
+}
+.theme-dark .dropdown-value {
+  background-color: #2b3138;
+}
+
+.dropdown {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 100%;
+  border-radius: 24px;
+  cursor: pointer;
+}
+.theme-light .dropdown {
+  background-color: #fafafa;
+}
+.theme-dark .dropdown {
+  background-color: #2b3138;
+}
+.dropdown.active {
+  display: flex;
 }
 
 .weather-stats-container {
@@ -507,11 +525,9 @@ header i:hover {
   width: 47%;
 }
 .theme-light .weather-stats-container .weather-stat {
-  transition: all 0.5s ease-in-out;
   color: black;
 }
 .theme-dark .weather-stats-container .weather-stat {
-  transition: all 0.5s ease-in-out;
   color: whitesmoke;
 }
 .weather-stats-container .weather-stat i {
@@ -526,16 +542,29 @@ header i:hover {
 .weather-stats-container .weather-stat .weather-stat-data .stat-value {
   font-size: 1.5em;
 }
+.weather-stats-container .weather-stat .weather-stat-data .stat-value.uv-low {
+  color: #558b2f;
+}
+.weather-stats-container .weather-stat .weather-stat-data .stat-value.uv-moderate {
+  color: #f9a825;
+}
+.weather-stats-container .weather-stat .weather-stat-data .stat-value.uv-high {
+  color: #ef6c00;
+}
+.weather-stats-container .weather-stat .weather-stat-data .stat-value.uv-veryhigh {
+  color: #b71c1c;
+}
+.weather-stats-container .weather-stat .weather-stat-data .stat-value.uv-extreme {
+  color: #6a1b9a;
+}
 .weather-stats-container .weather-stat .weather-stat-data .stat-name {
   font-size: 0.7em;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 .theme-light .weather-stats-container .weather-stat .weather-stat-data .stat-name {
-  transition: all 0.5s ease-in-out;
   color: #a6a6a6;
 }
 .theme-dark .weather-stats-container .weather-stat .weather-stat-data .stat-name {
-  transition: all 0.5s ease-in-out;
   color: #a6a6a6;
 }/*# sourceMappingURL=main.css.map */
