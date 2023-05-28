@@ -34,6 +34,10 @@ function App() {
   // Current states
   const [currentTimer, setCurrentTimer] = useLocalStorage("currentTimer", 0);
   const [currentStyle, setCurrentStyle] = useLocalStorage("tanningStyle", 0);
+  const [lastSunbathDate, setLastSunbathDate] = useLocalStorage(
+    "sunbathDate",
+    JSON.stringify(new Date())
+  );
 
   // Table with timer selection
   const timersTable = timersState.map(({ id, time }) => {
