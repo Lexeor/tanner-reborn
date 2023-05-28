@@ -11,3 +11,7 @@ export function compareDates(date1: Date, date2: Date) {
 
   return 0;
 }
+
+export function roundNumber(data: number) {
+  return Math.round(data);
+}

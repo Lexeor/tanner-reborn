@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { timeFormat } from "./utils/utils";
+import { timeFormat, roundNumber } from "./utils/utils";
 //Contexts
 import { ThemeContext } from "./contexts/ThemeContext";
 //Components
@@ -51,6 +51,7 @@ function App() {
     );
   });
 
+  // Timer functions
   function switchTimer(id: number) {
     if (id < timersState.length) {
       if (isFinished) {
@@ -72,11 +73,10 @@ function App() {
     setTsOpened((prev) => !prev);
   }
 
+  // Effects
   useEffect(() => {
     // Put finished timer to localStorage
     localStorage.setItem("currentTimer", JSON.stringify(currentTimer));
-    //...and date of last sunbath
-    localStorage.setItem("sunbathDate", JSON.stringify(new Date()));
   }, [currentTimer]);
 
   useEffect(() => {
@@ -93,9 +93,15 @@ function App() {
   };
 
   // Weather variables
-  const temp = `${weather?.main.feels_like ? weather?.main.feels_like : "--"}°`;
-  const uv = `${weather?.main.uv_index ? weather?.main.uv_index : "--"}`;
-  const wind = `${weather?.wind?.speed ? weather?.wind?.speed : "--"} m/s`;
+  const temp = `${
+    weather?.main.feels_like ? roundNumber(weather?.main.feels_like) : "--"
+  }°`;
+  const uv = `${
+    weather?.main.uv_index ? roundNumber(weather?.main.uv_index) : "--"
+  }`;
+  const wind = `${
+    weather?.wind?.speed ? roundNumber(weather?.wind?.speed) : "--"
+  } m/s`;
 
   // Weather initial fetch
   useEffect(() => {
