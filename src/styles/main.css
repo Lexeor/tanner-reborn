@@ -69,9 +69,11 @@ h2 {
 }
 .theme-light .container {
   background-color: #ececec;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .container {
   background-color: #202329;
+  transition: all 0.5s ease-in-out;
 }
 
 header {
@@ -88,9 +90,11 @@ header {
 }
 .theme-light header {
   color: black;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark header {
   color: whitesmoke;
+  transition: all 0.5s ease-in-out;
 }
 header i {
   font-size: 0.8em;
@@ -135,9 +139,11 @@ header i:hover {
 }
 .theme-light .timers-headers > div {
   color: #a6a6a6;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timers-headers > div {
   color: #a6a6a6;
+  transition: all 0.5s ease-in-out;
 }
 
 .timers-table {
@@ -157,28 +163,36 @@ header i:hover {
 }
 .theme-light .timer-btn {
   color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-btn {
   color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 .theme-light .timer-btn {
   background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-btn {
   background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 
 .theme-light .timer-btn.current {
   color: whitesmoke;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-btn.current {
   color: black;
+  transition: all 0.5s ease-in-out;
 }
 .theme-light .timer-btn.current {
   background-color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-btn.current {
   background-color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 
 .shadow-circle {
@@ -197,15 +211,19 @@ header i:hover {
 }
 .theme-light .shadow-circle {
   box-shadow: 0 -5px 40px 0 rgba(30, 30, 30, 0.2);
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .shadow-circle {
   box-shadow: 0 -5px 40px 0 rgba(30, 30, 30, 0.4);
+  transition: all 0.5s ease-in-out;
 }
 .theme-light .shadow-circle {
   background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .shadow-circle {
   background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 
 .shadow-circle.opened {
@@ -222,9 +240,11 @@ header i:hover {
 }
 .theme-light .i-chevron {
   color: black;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .i-chevron {
   color: whitesmoke;
+  transition: all 0.5s ease-in-out;
 }
 
 .i-chevron.opened {
@@ -256,15 +276,19 @@ header i:hover {
 }
 .theme-light .timer-body {
   background: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-body {
   background: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 .theme-light .timer-body {
   color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-body {
   color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 .timer-body h3 {
   text-transform: uppercase;
@@ -282,9 +306,11 @@ header i:hover {
 }
 .theme-light .timer-body.inactive {
   color: #ececec;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-body.inactive {
   color: #202329;
+  transition: all 0.5s ease-in-out;
 }
 
 .timer-clock {
@@ -301,9 +327,11 @@ header i:hover {
 }
 .theme-light .timer-background {
   background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-background {
   background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 
 .timer-wrapper {
@@ -353,15 +381,19 @@ header i:hover {
 }
 .theme-light .settings-menu {
   background-color: #ececec;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .settings-menu {
   background-color: #202329;
+  transition: all 0.5s ease-in-out;
 }
 .theme-light .settings-menu {
   color: black;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .settings-menu {
   color: whitesmoke;
+  transition: all 0.5s ease-in-out;
 }
 
 .hidden {
@@ -380,14 +412,15 @@ header i:hover {
   width: 100%;
   height: 48px;
   border-radius: 24px;
-  margin-bottom: 1em;
   transition: grid 1s ease-in-out;
 }
 .theme-light .slider {
   background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .slider {
   background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 
 .selector {
@@ -404,9 +437,11 @@ header i:hover {
 }
 .theme-light .selector {
   background-color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .selector {
   background-color: #f8c300;
+  transition: all 0.5s ease-in-out;
 }
 
 .slider.left {
@@ -446,9 +481,11 @@ header i:hover {
 }
 .theme-light .slider-option.active {
   color: whitesmoke;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .slider-option.active {
   color: black;
+  transition: all 0.5s ease-in-out;
 }
 
 .dropdown-wrapper {
@@ -460,9 +497,11 @@ header i:hover {
 }
 .theme-light .dropdown-wrapper {
   background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .dropdown-wrapper {
   background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 
 .dropdown-value {
@@ -478,9 +517,11 @@ header i:hover {
 }
 .theme-light .dropdown-value {
   background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .dropdown-value {
   background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 
 .dropdown {
@@ -498,9 +539,11 @@ header i:hover {
 }
 .theme-light .dropdown {
   background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .dropdown {
   background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
 }
 .dropdown.active {
   display: flex;
@@ -526,9 +569,11 @@ header i:hover {
 }
 .theme-light .weather-stats-container .weather-stat {
   color: black;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .weather-stats-container .weather-stat {
   color: whitesmoke;
+  transition: all 0.5s ease-in-out;
 }
 .weather-stats-container .weather-stat i {
   font-size: 2em;
@@ -564,7 +609,9 @@ header i:hover {
 }
 .theme-light .weather-stats-container .weather-stat .weather-stat-data .stat-name {
   color: #a6a6a6;
+  transition: all 0.5s ease-in-out;
 }
 .theme-dark .weather-stats-container .weather-stat .weather-stat-data .stat-name {
   color: #a6a6a6;
+  transition: all 0.5s ease-in-out;
 }/*# sourceMappingURL=main.css.map */
