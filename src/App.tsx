@@ -169,7 +169,12 @@ function App() {
             icon="ri-cloud-line"
             value={uv}
           />
-          <WeatherStat name="Burn Risk" icon="ri-fire-line" value="Low" />
+          <WeatherStat
+            name="Burn Risk"
+            type="burn"
+            icon="ri-fire-line"
+            value={uv}
+          />
         </div>
       </div>
     </div>
