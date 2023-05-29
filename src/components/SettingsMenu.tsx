@@ -19,7 +19,6 @@ function SettingsMenu({ isHidden }: Props) {
       />
       <h2>Weather location</h2>
       <Dropdown list={["Antalya", "Baku"]} />
-      <h2>Next option</h2>
     </div>
   );
 }

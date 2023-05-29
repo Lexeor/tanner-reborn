@@ -122,7 +122,9 @@ function App() {
           <ThemeSwitch />
           {isMenuVisible ? "SETTINGS" : "TANNER"}
           <div className="settings-icon" onClick={toggleMenu}>
-            <i className="ri-settings-3-fill"></i>
+            <i
+              className={isMenuVisible ? "ri-close-line" : "ri-menu-3-line"}
+            ></i>
           </div>
         </header>
         <div className="timer-background"></div>
