@@ -617,4 +617,26 @@ header i:hover {
 .theme-dark .weather-stats-container .weather-stat .weather-stat-data .stat-name {
   color: #a6a6a6;
   transition: all 0.5s ease-in-out;
+}
+
+.weather-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+  align-items: flex-end;
+  width: 100%;
+  padding: 1em;
+  font-size: 0.8em;
+}
+.theme-light .weather-info {
+  color: rgba(166, 166, 166, 0.3);
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .weather-info {
+  color: rgba(166, 166, 166, 0.3);
+  transition: all 0.5s ease-in-out;
 }/*# sourceMappingURL=main.css.map */

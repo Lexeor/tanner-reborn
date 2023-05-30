@@ -15,3 +15,26 @@ export function compareDates(date1: Date, date2: Date) {
 export function roundNumber(data: number) {
   return Math.round(data);
 }
+
+const leadingZero = (number: number): string => {
+  let result = String(number);
+  for (let i = result.length; i < 2; ++i) {
+    result = "0" + result;
+  }
+  return result;
+};
+
+export function formatDateTime(date: string | undefined): string {
+  if (date) {
+    const parsed: Date = new Date(date);
+
+    const day: string = leadingZero(parsed.getDate()).toString();
+    const month: string = leadingZero(parsed.getMonth()).toString();
+    const year: string = leadingZero(parsed.getFullYear()).toString();
+    const hours: string = leadingZero(parsed.getHours()).toString();
+    const minutes: string = leadingZero(parsed.getMinutes()).toString();
+
+    console.log(parsed);
+    return `${day}.${month}.${year} ${hours}:${minutes}`;
+  } else return "";
+}

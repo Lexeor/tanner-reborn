@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { timeFormat, roundNumber } from "./utils/utils";
+import { timeFormat, roundNumber, formatDateTime } from "./utils/utils";
 //Contexts
 import { ThemeContext } from "./contexts/ThemeContext";
 //Components
@@ -17,6 +17,7 @@ import { request } from "./utils/fetch";
 
 function App() {
   const [weather, setWeather] = useState<WeatherData>();
+  const [weatherCity, setWeatherCity] = useLocalStorage("weatherCity", "Baku");
 
   //Debug mode
   const debug = false;
@@ -175,6 +176,12 @@ function App() {
             icon="ri-fire-line"
             value={uv}
           />
+        </div>
+        <div className="weather-info">
+          <div>{weatherCity}</div>
+          <div>
+            Last updated: {formatDateTime(weather?.main?.date_time.toString())}
+          </div>
         </div>
       </div>
     </div>

@@ -147,6 +147,17 @@ header {
   }
 }
 
-.settings-icon {
-  //transform: scaleX(-1);
+.weather-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0.5em;
+  right: 0.5em;
+  align-items: flex-end;
+  width: 100%;
+  padding: 1em;
+  @include theme-aware("color", "color-tooltip");
+  font-size: 0.8em;
 }
