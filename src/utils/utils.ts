@@ -16,6 +16,7 @@ export function roundNumber(data: number) {
   return Math.round(data);
 }
 
+/** Adds a leading zero if number less than 10. */
 const leadingZero = (number: number): string => {
   let result = String(number);
   for (let i = result.length; i < 2; ++i) {
@@ -24,6 +25,7 @@ const leadingZero = (number: number): string => {
   return result;
 };
 
+/** Format Date from String to "dd.MM.yyyy HH:mm" format */
 export function formatDateTime(date: string | undefined): string {
   if (date) {
     const parsed: Date = new Date(date);
@@ -34,7 +36,6 @@ export function formatDateTime(date: string | undefined): string {
     const hours: string = leadingZero(parsed.getHours()).toString();
     const minutes: string = leadingZero(parsed.getMinutes()).toString();
 
-    console.log(parsed);
     return `${day}.${month}.${year} ${hours}:${minutes}`;
   } else return "";
 }
