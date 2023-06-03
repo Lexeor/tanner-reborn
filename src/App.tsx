@@ -110,8 +110,7 @@ function App() {
 
   // Weather initial fetch
   useEffect(() => {
-    request<WeatherData>("http://51.250.94.131:8000/").then((data) => {
-      console.log("fetch");
+    request<WeatherData>("https://51.250.94.131:8000/").then((data) => {
       setWeather(data);
     });
   }, [weatherCity]);
