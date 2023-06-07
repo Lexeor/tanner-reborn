@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Tanner App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Application for even and safe tanning based on the [Goltis tanning system](https://erch2014.com/krasota/64927-metod-vuksta-goltisa-kak-bystro-zagoret.html).
 
-## Available Scripts
+Goltis claims that, based on the principle of supercompensation, it is possible to train not only strength or endurance, but also the ability of skin cells to produce melanin, a pigment that gives the skin a dark color and at the same time protects it from ultraviolet radiation.
 
-In the project directory, you can run:
+Designed only for mobile view.
 
-### `npm start`
+## Functions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Timer, switching automatically according to Tanning schedule according to Goltis scheme.
+- Sound notification about the need to change the tanning side.
+- 3 tanning modes, depending on which the next day the user will be prompted to start a few stages earlier.
+- Ability to switch to an arbitrary state manually at any time.
+- Current weather and UV stats, based on information from opensource APIs and deployed on own backend for better functionality. (At the moment only two cities are available - it is a personal application after all :))
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Three tanning modes
 
-### `npm test`
+### Normal
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Minus 3 stages next day.
 
-### `npm run build`
+### Fast
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Minus 2 stages next day.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Extreme
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Minus 1 stage next day.
 
-### `npm run eject`
+## Check it right now
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Application is ready to use, powered by [Github Pages](https://lexeor.github.io/tanner-reborn/).
