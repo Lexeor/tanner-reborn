@@ -128,10 +128,16 @@ function App() {
 
   // Weather initial fetch
   useEffect(() => {
-    request<WeatherData>("http://51.250.94.131:8000/").then((data) => {
-      setWeather(data);
-    });
+    request<WeatherData>(`http://51.250.94.131:8000/${weatherCity}`).then(
+      (data) => {
+        setWeather(data);
+      }
+    );
   }, [weatherCity]);
+
+  function changeCity(city: string) {
+    setWeatherCity(city);
+  }
 
   // Check last sunbath date
   useEffect(() => {
@@ -155,7 +161,11 @@ function App() {
           changeCurrentTimer={switchTimer}
           tanningStyle={currentStyle}
         />
-        <SettingsMenu isHidden={!isMenuVisible} toggleMenu={toggleMenu} />
+        <SettingsMenu
+          isHidden={!isMenuVisible}
+          toggleMenu={toggleMenu}
+          setWeatherCity={changeCity}
+        />
         <header>
           <ThemeSwitch />
           {isMenuVisible ? "SETTINGS" : "TANNER"}

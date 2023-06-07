@@ -5,9 +5,10 @@ import Dropdown from "./Dropdown";
 type Props = {
   isHidden: boolean;
   toggleMenu: () => void;
+  setWeatherCity: (city: string) => void;
 };
 
-function SettingsMenu({ isHidden }: Props) {
+function SettingsMenu({ isHidden, setWeatherCity }: Props) {
   const panelClass = `settings-menu${isHidden ? " hidden" : ""}`;
 
   return (
@@ -18,7 +19,7 @@ function SettingsMenu({ isHidden }: Props) {
         localStorageValue={"tanningStyle"}
       />
       <h2>Weather location</h2>
-      <Dropdown list={["Antalya", "Baku"]} />
+      <Dropdown list={["Antalya", "Baku"]} setWeatherCity={setWeatherCity} />
     </div>
   );
 }

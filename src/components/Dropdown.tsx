@@ -3,9 +3,10 @@ import useLocalStorage from "../hooks/useLocalStorage";
 
 type Props = {
   list: string[];
+  setWeatherCity: (city: string) => void;
 };
 
-function Dropdown({ list }: Props) {
+function Dropdown({ list, setWeatherCity }: Props) {
   const wrapperRef = useRef<any>(null);
   const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useLocalStorage<string>(
@@ -38,6 +39,7 @@ function Dropdown({ list }: Props) {
       toggleDropDown();
       return item;
     });
+    setWeatherCity(item);
   };
 
   //Render list
