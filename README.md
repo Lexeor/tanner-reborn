@@ -13,7 +13,8 @@ Designed for mobile view only.
 - Dark & Light themes.
 - 3 tanning modes, depending on which the next day the user will be prompted to start a few stages earlier.
 - Ability to switch to an arbitrary state manually at any time.
-- Current weather and UV stats, based on information from opensource APIs and deployed on own backend for better functionality. (At the moment only two cities are available - it is a personal application after all :))
+- Current weather and UV stats, based on information from free public APIs ([OpenWeather](https://openweathermap.org/api) & [OpenUV](https://www.openuv.io/)) and deployed on own backend for better functionality.
+  At the moment only two cities are available - it is a personal application after all 😋
 
 ## Three tanning modes
 
