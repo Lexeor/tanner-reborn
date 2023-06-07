@@ -10,6 +10,7 @@ Designed only for mobile view.
 
 - Timer, switching automatically according to Tanning schedule according to Goltis scheme.
 - Sound notification about the need to change the tanning side.
+- Dark theme.
 - 3 tanning modes, depending on which the next day the user will be prompted to start a few stages earlier.
 - Ability to switch to an arbitrary state manually at any time.
 - Current weather and UV stats, based on information from opensource APIs and deployed on own backend for better functionality. (At the moment only two cities are available - it is a personal application after all :))
