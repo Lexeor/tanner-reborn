@@ -6,10 +6,12 @@ export function timeFormat(time: number) {
 }
 
 export function compareDates(date1: Date, date2: Date) {
-  if (date1 < date2) return -1;
-  if (date1 > date2) return 1;
+  // Set time to 0 to compare only pure date
+  date1.setHours(0, 0, 0, 0);
+  date2.setHours(0, 0, 0, 0);
 
-  return 0;
+  if (date1.toDateString() === date2.toDateString()) return true;
+  else return false;
 }
 
 export function roundNumber(data: number) {

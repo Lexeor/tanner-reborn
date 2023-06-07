@@ -1,5 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
-import { timeFormat, roundNumber, formatDateTime } from "./utils/utils";
+import {
+  timeFormat,
+  roundNumber,
+  formatDateTime,
+  compareDates,
+} from "./utils/utils";
 //Contexts
 import { ThemeContext } from "./contexts/ThemeContext";
 //Components
@@ -8,6 +13,7 @@ import Timer from "./components/Timer";
 import WeatherStat from "./components/WeatherStat";
 import ThemeSwitch from "./components/ThemeSwitch";
 import SettingsMenu from "./components/SettingsMenu";
+import Popup from "./components/Popup";
 // Goltis data
 import { goltisData } from "./data/goltis";
 import { debugData } from "./data/debug";
@@ -27,6 +33,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isPopupShow, setIsPopupShow] = useState(false);
 
   const [tsOpened, setTsOpened] = useState(false);
   // ThemeContext
@@ -57,21 +64,32 @@ function App() {
   });
 
   // Timer functions
-  function switchTimer(id: number) {
+  function switchTimer(id: number, started: boolean = true) {
     if (id < timersState.length) {
       if (isFinished) {
         setIsFinished(false);
       }
       setCurrentTimer(id);
       // Start next timer
-      setIsPlaying(true);
+      started &&
+        setIsPlaying(() => {
+          // if last timer was starter today - renew last sunbath date
+          if (compareDates(new Date(JSON.parse(lastSunbathDate)), new Date())) {
+            setLastSunbathDate(JSON.stringify(new Date()));
+          }
+          return true;
+        });
     } else {
       setIsFinished(true);
     }
   }
 
   function toggleTimer() {
-    setIsPlaying((prev) => !prev);
+    setIsPlaying((prev) => {
+      // Set new "last sunbath Date" if toggled to play
+      !prev && setLastSunbathDate(JSON.stringify(new Date()));
+      return !prev;
+    });
   }
 
   function openTimerSettings() {
@@ -110,14 +128,33 @@ function App() {
 
   // Weather initial fetch
   useEffect(() => {
-    request<WeatherData>("https://51.250.94.131:8000/").then((data) => {
+    request<WeatherData>("http://51.250.94.131:8000/").then((data) => {
       setWeather(data);
     });
   }, [weatherCity]);
 
+  // Check last sunbath date
+  useEffect(() => {
+    if (!compareDates(new Date(JSON.parse(lastSunbathDate)), new Date())) {
+      // if not today - prompt the user to choose an action
+      setIsPopupShow(true);
+    }
+  }, []);
+
+  // Popup
+  function togglePopup() {
+    setIsPopupShow((prev) => !prev);
+  }
+
   return (
     <div className={AppClass}>
       <div className="container">
+        <Popup
+          showPopup={isPopupShow}
+          togglePopup={togglePopup}
+          changeCurrentTimer={switchTimer}
+          tanningStyle={currentStyle}
+        />
         <SettingsMenu isHidden={!isMenuVisible} toggleMenu={toggleMenu} />
         <header>
           <ThemeSwitch />

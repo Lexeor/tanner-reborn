@@ -14,6 +14,120 @@
  * @example - @include theme-aware('background', 'color-background');
  * @returns - background: #FFF;
  */
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 300ms;
+  z-index: 100;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 40px;
+  border-radius: 5px;
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  position: relative;
+  transition: all 5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+  gap: 10px;
+}
+.theme-light .popup {
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .popup {
+  color: whitesmoke;
+  transition: all 0.5s ease-in-out;
+}
+.theme-light .popup {
+  background-color: #fafafa;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .popup {
+  background-color: #2b3138;
+  transition: all 0.5s ease-in-out;
+}
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup button {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-size: 1.2em;
+}
+
+.theme-light .btn-primary {
+  color: whitesmoke;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .btn-primary {
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+.theme-light .btn-primary {
+  background-color: #f8c300;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .btn-primary {
+  background-color: #f8c300;
+  transition: all 0.5s ease-in-out;
+}
+.theme-light .btn-primary:focus {
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .btn-primary:focus {
+  background-color: whitesmoke;
+  transition: all 0.5s ease-in-out;
+}
+
+.theme-light .btn-secondary {
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .btn-secondary {
+  color: whitesmoke;
+  transition: all 0.5s ease-in-out;
+}
+.theme-light .btn-secondary {
+  background-color: #ececec;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .btn-secondary {
+  background-color: #202329;
+  transition: all 0.5s ease-in-out;
+}
+.theme-light .btn-secondary:focus {
+  color: whitesmoke;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .btn-secondary:focus {
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+.theme-light .btn-secondary:focus {
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+}
+.theme-dark .btn-secondary:focus {
+  background-color: whitesmoke;
+  transition: all 0.5s ease-in-out;
+}
+
 * {
   box-sizing: border-box;
 }

@@ -1,0 +1,63 @@
+.overlay {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: opacity 300ms;
+  z-index: 100;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 40px;
+  border-radius: 5px;
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  position: relative;
+  transition: all 5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+  gap: 10px;
+  @include theme-aware("color", "color-text");
+  @include theme-aware("background-color", "color-background");
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.popup {
+  button {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 1.2em;
+  }
+}
+
+.btn-primary {
+  @include theme-aware("color", "color-text-contrast");
+  @include theme-aware("background-color", "color-primary");
+
+  &:focus {
+    @include theme-aware("background-color", "color-text");
+  }
+}
+
+.btn-secondary {
+  @include theme-aware("color", "color-text");
+  @include theme-aware("background-color", "color-background-darker");
+
+  &:focus {
+    @include theme-aware("color", "color-text-contrast");
+    @include theme-aware("background-color", "color-text");
+  }
+}
