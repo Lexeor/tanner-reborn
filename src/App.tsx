@@ -56,7 +56,10 @@ function App() {
       <button
         key={id}
         className={timerClass}
-        onClick={() => switchTimer(id - 1)}
+        onClick={() => {
+          toggleTimerSettings();
+          switchTimer(id - 1);
+        }}
       >
         {timeFormat(time)}
       </button>
@@ -89,7 +92,7 @@ function App() {
     });
   }
 
-  function openTimerSettings() {
+  function toggleTimerSettings() {
     setTsOpened((prev) => !prev);
   }
 
@@ -188,7 +191,7 @@ function App() {
             className={`i-chevron ri-arrow-down-s-line${
               tsOpened ? " opened" : ""
             }`}
-            onClick={openTimerSettings}
+            onClick={toggleTimerSettings}
           ></i>
         </div>
         <div className="weather-stats-container">
