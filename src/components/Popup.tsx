@@ -20,8 +20,8 @@ function Popup({
   tanningStyle,
   changeCurrentTimer,
 }: Props) {
+  // Get current timer from localStorage
   const currentTimer = useLocalStorage("currentTimer", 0)[0];
-  console.log(currentTimer);
 
   // Calculate new currentTimer id for switching stage (which is id multiple of 5)
   function calculateNewStage() {
@@ -29,7 +29,6 @@ function Popup({
       Math.floor(
         (currentTimer - TanningStyles[tanningStyle].rollback * 5) / 5
       ) * 5;
-    console.log(result >= 0 ? result : 0);
     return result >= 0 ? result : 0;
   }
 

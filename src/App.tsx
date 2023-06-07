@@ -73,10 +73,7 @@ function App() {
       // Start next timer
       started &&
         setIsPlaying(() => {
-          // if last timer was starter today - renew last sunbath date
-          if (compareDates(new Date(JSON.parse(lastSunbathDate)), new Date())) {
-            setLastSunbathDate(JSON.stringify(new Date()));
-          }
+          setLastSunbathDate(JSON.stringify(new Date()));
           return true;
         });
     } else {
