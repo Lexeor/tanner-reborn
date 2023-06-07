@@ -9,9 +9,9 @@ type Props = {
 };
 
 const TanningStyles = [
-  { name: "Normal", length: 3 },
-  { name: "Fast", length: 2 },
-  { name: "Extreme", length: 1 },
+  { name: "Normal", rollback: 3 },
+  { name: "Fast", rollback: 2 },
+  { name: "Extreme", rollback: 1 },
 ];
 
 function Popup({
@@ -20,11 +20,17 @@ function Popup({
   tanningStyle,
   changeCurrentTimer,
 }: Props) {
-  const currentStage = useLocalStorage("currentTimer", 0)[0];
-  console.log(currentStage);
+  const currentTimer = useLocalStorage("currentTimer", 0)[0];
+  console.log(currentTimer);
 
+  // Calculate new currentTimer id for switching stage (which is id multiple of 5)
   function calculateNewStage() {
-    return 1;
+    const result: number =
+      Math.floor(
+        (currentTimer - TanningStyles[tanningStyle].rollback * 5) / 5
+      ) * 5;
+    console.log(result >= 0 ? result : 0);
+    return result >= 0 ? result : 0;
   }
 
   return (
@@ -45,12 +51,15 @@ function Popup({
         </p>
         <p>
           Move current timer back for{" "}
-          <b>{TanningStyles[tanningStyle].length} stages</b> according to this
+          <b>{TanningStyles[tanningStyle].rollback} stages</b> according to this
           setting?
         </p>
         <button
           className="btn-primary"
-          onClick={() => changeCurrentTimer(calculateNewStage(), false)}
+          onClick={() => {
+            changeCurrentTimer(calculateNewStage(), false);
+            togglePopup();
+          }}
         >
           Accept
         </button>
