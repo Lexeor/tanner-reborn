@@ -34,6 +34,6 @@ Minus 1 stage next day.
 
 Application is ready to use, powered by [Github Pages](https://lexeor.github.io/tanner-reborn/).
 
-### Known issues
+## Known issues
 
 - Sound doesn't play if mobile screen is switched off. Related to iOS system restrictions.
