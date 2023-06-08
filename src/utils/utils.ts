@@ -33,7 +33,7 @@ export function formatDateTime(date: string | undefined): string {
     const parsed: Date = new Date(date);
 
     const day: string = leadingZero(parsed.getDate()).toString();
-    const month: string = leadingZero(parsed.getMonth()).toString();
+    const month: string = leadingZero(parsed.getMonth() + 1).toString();
     const year: string = leadingZero(parsed.getFullYear()).toString();
     const hours: string = leadingZero(parsed.getHours()).toString();
     const minutes: string = leadingZero(parsed.getMinutes()).toString();
