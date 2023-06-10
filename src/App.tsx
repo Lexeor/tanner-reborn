@@ -126,7 +126,6 @@ function App() {
     weather?.wind?.speed ? roundNumber(weather?.wind?.speed) : "--"
   } m/s`;
   const direction = weather?.wind?.deg;
-  console.log(direction);
 
   // Weather initial fetch
   useEffect(() => {
