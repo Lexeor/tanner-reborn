@@ -692,6 +692,14 @@ header i:hover {
   color: whitesmoke;
   transition: all 0.5s ease-in-out;
 }
+.weather-stats-container .weather-stat .wind-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.weather-stats-container .weather-stat .wind-icon-wrapper span {
+  font-size: 0.8em;
+}
 .weather-stats-container .weather-stat i {
   font-size: 2em;
 }

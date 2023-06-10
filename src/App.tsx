@@ -125,6 +125,8 @@ function App() {
   const wind = `${
     weather?.wind?.speed ? roundNumber(weather?.wind?.speed) : "--"
   } m/s`;
+  const direction = weather?.wind?.deg;
+  console.log(direction);
 
   // Weather initial fetch
   useEffect(() => {
@@ -210,7 +212,13 @@ function App() {
             icon="ri-temp-hot-line"
             value={temp}
           />
-          <WeatherStat name="Wind" icon="ri-windy-line" value={wind} />
+          <WeatherStat
+            name="Wind"
+            icon="ri-windy-line"
+            value={wind}
+            type="wind"
+            direction={direction}
+          />
           <WeatherStat
             name="UV Index"
             type="uv"

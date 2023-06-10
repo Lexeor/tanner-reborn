@@ -104,6 +104,16 @@ header {
     width: 47%;
     @include theme-aware("color", "color-text");
 
+    .wind-icon-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+
+      span {
+        font-size: 0.8em;
+      }
+    }
+
     i {
       font-size: 2em;
     }

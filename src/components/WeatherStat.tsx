@@ -1,16 +1,18 @@
 import React from "react";
+import WindIcon from "./WindIcon";
 
 type WeatherStatProps = {
   icon: string;
   value: string;
   name: string;
   type?: "temp" | "uv" | "wind" | "burn";
+  direction?: number;
 };
 
-function WeatherStat({ icon, value, name, type }: WeatherStatProps) {
+function WeatherStat({ icon, value, name, type, direction }: WeatherStatProps) {
   const valueClass = () => {
     if (type) {
-      if (type === "uv" || "burn") {
+      if (type === "uv" || type === "burn") {
         if (parseFloat(value) > 11) {
           return "stat-value uv-extreme";
         } else if (parseFloat(value) > 7) {
@@ -52,7 +54,11 @@ function WeatherStat({ icon, value, name, type }: WeatherStatProps) {
 
   return (
     <div className="weather-stat">
-      <i className={icon}></i>
+      {type === "wind" ? (
+        <WindIcon direction={Number(direction!)} />
+      ) : (
+        <i className={icon}></i>
+      )}
       <div className="weather-stat-data">
         <span className={valueClass()}>{renderValue()}</span>
         <span className="stat-name">{name}</span>
