@@ -21,6 +21,9 @@ import { debugData } from "./data/debug";
 import { WeatherData } from "./types/types";
 import { request } from "./utils/fetch";
 
+// Network data
+import { server } from "./utils/urls";
+
 function App() {
   const [weather, setWeather] = useState<WeatherData>();
   const [weatherCity, setWeatherCity] = useLocalStorage("weatherCity", "Baku");
@@ -129,11 +132,9 @@ function App() {
 
   // Weather initial fetch
   useEffect(() => {
-    request<WeatherData>(`http://51.250.94.131:8000/${weatherCity}`).then(
-      (data) => {
-        setWeather(data);
-      }
-    );
+    request<WeatherData>(`/${weatherCity}`).then((data) => {
+      setWeather(data);
+    });
   }, [weatherCity]);
 
   function changeCity(city: string) {
