@@ -51,7 +51,7 @@
   gap: 10px;
 }
 .theme-light .popup {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .popup {
@@ -83,7 +83,7 @@
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .btn-primary {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-light .btn-primary {
@@ -95,7 +95,7 @@
   transition: all 0.5s ease-in-out;
 }
 .theme-light .btn-primary:focus {
-  background-color: black;
+  background-color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .btn-primary:focus {
@@ -104,7 +104,7 @@
 }
 
 .theme-light .btn-secondary {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .btn-secondary {
@@ -124,11 +124,11 @@
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .btn-secondary:focus {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-light .btn-secondary:focus {
-  background-color: black;
+  background-color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .btn-secondary:focus {
@@ -211,7 +211,7 @@ header {
   z-index: 11;
 }
 .theme-light header {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark header {
@@ -320,7 +320,7 @@ header i:hover {
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .timer-btn.current {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-light .timer-btn.current {
@@ -376,7 +376,7 @@ header i:hover {
   transition: all 0.8s ease-in-out;
 }
 .theme-light .i-chevron {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .i-chevron {
@@ -525,7 +525,7 @@ header i:hover {
   transition: all 0.5s ease-in-out;
 }
 .theme-light .settings-menu {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .settings-menu {
@@ -621,7 +621,7 @@ header i:hover {
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .slider-option.active {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 
@@ -708,7 +708,7 @@ header i:hover {
   width: 47%;
 }
 .theme-light .weather-stats-container .weather-stat {
-  color: black;
+  color: #202329;
   transition: all 0.5s ease-in-out;
 }
 .theme-dark .weather-stats-container .weather-stat {
