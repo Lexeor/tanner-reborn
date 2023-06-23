@@ -3,7 +3,8 @@
   position: absolute;
   bottom: 30px;
   flex-direction: column;
-  width: 390px;
+  width: 100%;
+  max-width: 500px;
   transition: all 0.8s ease-in-out;
   padding-bottom: 30px;
   z-index: 1;
@@ -95,4 +96,10 @@
 
 .i-chevron.opened {
   transform: scaleY(-1);
+}
+
+@media screen and (max-width: 400px) {
+  .timers-panel {
+    max-width: 100vw;
+  }
 }
