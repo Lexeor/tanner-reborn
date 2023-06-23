@@ -293,7 +293,7 @@ header i:hover {
 
 .timer-btn {
   border: 0;
-  box-shadow: 0 0 4px #f8c300;
+  box-shadow: 0 0 4px rgba(248, 195, 0, 0.6);
   width: 18%;
   border-radius: 5px;
   padding: 0.3em 0;
