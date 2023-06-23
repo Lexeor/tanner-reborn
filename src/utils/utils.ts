@@ -41,3 +41,13 @@ export function formatDateTime(date: string | undefined): string {
     return `${day}.${month}.${year} ${hours}:${minutes}`;
   } else return "";
 }
+
+/** Convert temperatue from Celsius to Fahrenheit */
+export function toFahrenheit(temp: number) {
+  return (temp * 9) / 5 + 32;
+}
+
+/** Convert wind speed from Meters per second to Miles per hour */
+export function toMph(wind: number) {
+  return Number(wind * 2.237).toFixed(2);
+}
