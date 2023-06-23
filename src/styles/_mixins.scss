@@ -15,3 +15,37 @@
     }
   }
 }
+
+/** 
+* scrollbars mixin
+ * @param  {size}                Scrollbar handler width & height
+ * @param  {foreground-color}    Scrollbar foreground color
+ * @param  {background-color}    Scrollbar background color
+* 
+* @example - @include scrollbars(10px, pink, red);
+*/
+@mixin scrollbars(
+  $size,
+  $foreground-color,
+  $background-color: mix($foreground-color, white, 50%)
+) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

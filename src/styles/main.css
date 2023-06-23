@@ -14,6 +14,14 @@
  * @example - @include theme-aware('background', 'color-background');
  * @returns - background: #FFF;
  */
+/** 
+* scrollbars mixin
+ * @param  {size}                Scrollbar handler width & height
+ * @param  {foreground-color}    Scrollbar foreground color
+ * @param  {background-color}    Scrollbar background color
+* 
+* @example - @include scrollbars(10px, pink, red);
+*/
 .overlay {
   visibility: hidden;
   opacity: 0;
@@ -235,6 +243,20 @@ header i:hover {
   overflow-y: scroll;
   padding: 1em;
 }
+.timer-selector-wrapper::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+.timer-selector-wrapper::-webkit-scrollbar-thumb {
+  background: #f8c300;
+}
+.timer-selector-wrapper::-webkit-scrollbar-track {
+  background: #fce180;
+}
+.timer-selector-wrapper {
+  scrollbar-face-color: #f8c300;
+  scrollbar-track-color: #fce180;
+}
 
 .timers-headers {
   margin-top: 50px;
@@ -264,15 +286,16 @@ header i:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 5px;
+  gap: 8px 5px;
   flex-wrap: wrap;
 }
 
 .timer-btn {
-  border: 1px solid #f8c300;
+  border: 0;
+  box-shadow: 0 0 4px #f8c300;
   width: 18%;
   border-radius: 5px;
-  padding: 0.5em 0;
+  padding: 0.3em 0;
   font-size: 1.1em;
 }
 .theme-light .timer-btn {
