@@ -219,7 +219,8 @@ header {
   transition: all 0.5s ease-in-out;
 }
 header i {
-  font-size: 0.8em;
+  font-size: 1em;
+  font-weight: normal;
 }
 header i:hover {
   cursor: pointer;
