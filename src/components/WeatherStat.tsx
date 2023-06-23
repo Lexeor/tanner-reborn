@@ -10,6 +10,7 @@ type WeatherStatProps = {
 };
 
 function WeatherStat({ icon, value, name, type, direction }: WeatherStatProps) {
+  // Class for value field
   const valueClass = () => {
     switch (type) {
       case "uv":
@@ -22,15 +23,17 @@ function WeatherStat({ icon, value, name, type, direction }: WeatherStatProps) {
           return "stat-value uv-high";
         } else if (parseFloat(value) > 2) {
           return "stat-value uv-moderate";
-        } else {
+        } else if (parseFloat(value) > 0) {
           return "stat-value uv-low";
         }
+      // if no value - default case
       case undefined:
       default:
         return "stat-value";
     }
   };
 
+  // Value for value field
   const renderValue = () => {
     if (type) {
       if (type === "burn") {
@@ -40,8 +43,10 @@ function WeatherStat({ icon, value, name, type, direction }: WeatherStatProps) {
           return "High";
         } else if (parseFloat(value) > 2) {
           return "Medium";
-        } else {
+        } else if (parseFloat(value) > 0) {
           return "Low";
+        } else {
+          return "No risk";
         }
       } else {
         return value;
