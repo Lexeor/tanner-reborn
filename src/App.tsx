@@ -130,9 +130,11 @@ function App() {
 
   // Weather initial fetch
   useEffect(() => {
-    request<WeatherData>(`/${weatherCity}`).then((data) => {
-      setWeather(data);
-    });
+    request<WeatherData>(`/api/get_weather?city=${weatherCity}`).then(
+      (data) => {
+        setWeather(data);
+      }
+    );
   }, [weatherCity]);
 
   function changeCity(city: string) {
