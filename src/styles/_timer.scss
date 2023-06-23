@@ -26,7 +26,7 @@
 }
 
 .timer-body.inactive {
-  background: radial-gradient($colorPrimary, $colorPrimaryShaded);
+  background: radial-gradient($color-primary, $color-primary-shaded);
   @include theme-aware("color", "color-background-darker");
 }
 
@@ -54,7 +54,7 @@
     svg {
       position: relative;
       z-index: 6;
-      filter: drop-shadow(0 0px 3px rgba($colorBlack, 0.1));
+      filter: drop-shadow(0 0px 3px rgba($color-black, 0.1));
 
       path:first-child {
         transition: $transition;

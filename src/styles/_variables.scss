@@ -1,26 +1,26 @@
 //Colors
-$colorPrimary: #f8c300;
-$colorPrimaryShaded: #faa620;
-$colorIcons: #e2e2e2;
-$colorBackground: #fff;
-$colorBackgroundShaded: #f7f7f7;
-$colorBlack: #000;
+$color-primary: #f8c300;
+$color-primary-shaded: #faa620;
+$color-icons: #e2e2e2;
+$color-background: #fff;
+$color-background-shaded: #f7f7f7;
+$color-black: #000;
 
 // UV COlors
-$clrUvLow: #558b2f;
-$clrUvMod: #f9a825;
-$clrUvHigh: #ef6c00;
-$clrUvVeryHigh: #b71c1c;
-$clrUvExtreme: #6a1b9a;
+$clr-uv-low: #558b2f;
+$clr-uv-mod: #f9a825;
+$clr-uv-high: #ef6c00;
+$clr-uv-very-high: #b71c1c;
+$clr-uv-extreme: #6a1b9a;
 
 // Transition
 $transition: all 0.5s ease-in-out;
 
 $colors: (
-  "primary": $colorPrimary,
-  "primaryDark": $colorPrimaryShaded,
-  "trail": $colorPrimary,
-  "trailDark": $colorPrimaryShaded,
+  "primary": $color-primary,
+  "primaryDark": $color-primary-shaded,
+  "trail": $color-primary,
+  "trailDark": $color-primary-shaded,
 );
 
 :export {

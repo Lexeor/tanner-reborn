@@ -129,23 +129,23 @@ header {
         font-size: 1.5em;
 
         &.uv-low {
-          color: $clrUvLow;
+          color: $clr-uv-low;
         }
 
         &.uv-moderate {
-          color: $clrUvMod;
+          color: $clr-uv-mod;
         }
 
         &.uv-high {
-          color: $clrUvHigh;
+          color: $clr-uv-high;
         }
 
         &.uv-veryhigh {
-          color: $clrUvVeryHigh;
+          color: $clr-uv-very-high;
         }
 
         &.uv-extreme {
-          color: $clrUvExtreme;
+          color: $clr-uv-extreme;
         }
       }
 

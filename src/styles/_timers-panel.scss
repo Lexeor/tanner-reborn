@@ -16,7 +16,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 1em;
-  @include scrollbars(3px, $colorPrimary);
+  @include scrollbars(3px, $color-primary);
 }
 
 .timers-headers {
@@ -46,10 +46,9 @@
 
 .timer-btn {
   @include theme-aware("color", "color-primary");
-  //border: 1px solid $colorPrimary;
   @include theme-aware("background-color", "color-background");
   border: 0;
-  box-shadow: 0 0 4px rgba($colorPrimary, 0.6);
+  box-shadow: 0 0 4px rgba($color-primary, 0.6);
   width: 18%;
   border-radius: 5px;
   padding: 0.3em 0;
