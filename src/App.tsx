@@ -52,9 +52,7 @@ function App() {
 
   // Table with timer selection
   const timersTable = timersState.map(({ id, time }) => {
-    const timerClass = `timer-btn${
-      currentTimer ? (currentTimer + 1 === id ? " current" : "") : ""
-    }`;
+    const timerClass = `timer-btn${currentTimer + 1 === id ? " current" : ""}`;
     return (
       <button
         key={id}
