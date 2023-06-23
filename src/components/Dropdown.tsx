@@ -14,6 +14,8 @@ function Dropdown({ list, setWeatherCity }: Props) {
     list[0]
   );
 
+  console.log(selectedItem);
+
   useEffect(() => {
     function handleClickOutside(event: any) {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {

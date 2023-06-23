@@ -27,6 +27,13 @@ function useLocalStorage<T>(key: string, initialValue: T): [T, SetValue<T>] {
 
     try {
       const item = window.localStorage.getItem(key);
+      if (item) {
+        return parseJSON(item) as T;
+      } else {
+        // Set value to localStorage if it's not set already
+        window.localStorage.setItem(key, JSON.stringify(initialValue));
+        return initialValue;
+      }
       return item ? (parseJSON(item) as T) : initialValue;
     } catch (error) {
       console.warn(`Error reading localStorage key “${key}”:`, error);
