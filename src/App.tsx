@@ -50,6 +50,8 @@ function App() {
     JSON.stringify(new Date())
   );
 
+  console.log(formatDateTime("2023-06-25T09:14:07.892Z"));
+
   // Table with timer selection
   const timersTable = timersState.map(({ id, time }) => {
     const timerClass = `timer-btn${currentTimer + 1 === id ? " current" : ""}`;

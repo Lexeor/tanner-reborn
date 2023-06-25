@@ -27,10 +27,15 @@ const leadingZero = (number: number): string => {
   return result;
 };
 
-/** Format Date from String to "dd.MM.yyyy HH:mm" format */
+/** Format Date from String to "dd.MM.yyyy HH:mm" format
+ * adds UTC difference as well
+ */
 export function formatDateTime(date: string | undefined): string {
   if (date) {
     const parsed: Date = new Date(date);
+    console.log("parsed", parsed.toUTCString());
+    // add UTC difference
+    parsed.setMinutes(parsed.getMinutes() + -1 * parsed.getTimezoneOffset());
 
     const day: string = leadingZero(parsed.getDate()).toString();
     const month: string = leadingZero(parsed.getMonth() + 1).toString();
