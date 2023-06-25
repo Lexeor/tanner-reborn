@@ -105,8 +105,9 @@ header {
     width: 47%;
     @include theme-aware("color", "color-text");
 
-    .wind-icon-wrapper {
+    .weather-stat-icon-wrapper {
       display: flex;
+      width: 34px;
       flex-direction: column;
       gap: 2px;
 

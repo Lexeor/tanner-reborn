@@ -58,11 +58,13 @@ function WeatherStat({ icon, value, name, type, direction }: WeatherStatProps) {
 
   return (
     <div className="weather-stat">
-      {type === "wind" ? (
-        <WindIcon direction={Number(direction!)} />
-      ) : (
-        <i className={icon}></i>
-      )}
+      <div className="weather-stat-icon-wrapper">
+        {type === "wind" ? (
+          <WindIcon direction={Number(direction!)} />
+        ) : (
+          <i className={icon}></i>
+        )}
+      </div>
       <div className="weather-stat-data">
         <span className={valueClass()}>{renderValue()}</span>
         <span className="stat-name">{name}</span>

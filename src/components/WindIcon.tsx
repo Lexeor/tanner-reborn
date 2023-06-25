@@ -29,13 +29,13 @@ function WindIcon({ direction }: WindIconProps) {
     return arr[val % 16];
   }
   return (
-    <div className="wind-icon-wrapper">
+    <>
       <i
         className="fa-solid fa-arrow-up"
         style={{ transform: `rotate(${direction}deg)` }}
       ></i>
       <span>{renderDirection()}</span>
-    </div>
+    </>
   );
 }
 
