@@ -28,15 +28,20 @@ function WindIcon({ direction }: WindIconProps) {
     ];
     return arr[val % 16];
   }
-  return (
-    <>
-      <i
-        className="fa-solid fa-arrow-up"
-        style={{ transform: `rotate(${direction}deg)` }}
-      ></i>
-      <span>{renderDirection()}</span>
-    </>
-  );
+
+  if (!isNaN(direction)) {
+    return (
+      <>
+        <i
+          className="fa-solid fa-arrow-up"
+          style={{ transform: `rotate(${direction}deg)` }}
+        ></i>
+        <span>{renderDirection()}</span>
+      </>
+    );
+  } else {
+    return <i className="ri-windy-line"></i>;
+  }
 }
 
 export default WindIcon;
