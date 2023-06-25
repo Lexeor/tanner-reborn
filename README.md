@@ -32,7 +32,7 @@ Minus 1 stage next day.
 
 ## Check it right now
 
-Application is ready to use, deployed on my own server [Github Pages](http://62.84.125.174/).
+Application is ready to use, deployed on my own server [Tanner App](http://62.84.125.174/).
 
 ## Known issues
 
